@@ -1,21 +1,25 @@
 <!-- Loop over each object in the posts array -->
+<h1>Welcome to dashboard</h1>
 <h2>View all posts </h2>
-    {{!-- {{#each posts as |post| }}
-    <div class="row mb-4 project">
-    <div class="col-md-5">
-        <h2>
-    
-        <a href="/post/{{post.id}}">{{post.title}}</a>
-        </h2>
-        
-        <p>Created by {{post.user.username}} on </p>
-        {{!-- {{format_date project.date_created}} 
+{{#each posts as |post| }}
+<div class="container">
+    <div class="row mb-4 post bg-secondary text-light">
+        <div class="col-md-5">
+            <h2>
+
+                <a href="/posts/{{post.id}}" class="text-light">{{post.title}}</a>
+            </h2>
+        </div>
+        <div class="col-md-5">
+            <p>Posted by {{post.user.username}} on </p>{{post.date_created}}
+        </div>
     </div>
-    <div class="col-md-7">
+
+    <div class="row">
         <p>
-        {{post.content}}
+            {{post.content}}
         </p>
     </div>
-    </div>
-    {{/each}} --}}
-<a href="/dashboard/new">Add New Post</a>
+</div>
+{{/each}}
+<a href="/newpost">Add New Post</a>

@@ -11,9 +11,10 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    console.log("Creatinga new user")
     if (response.ok) {
-      document.location.replace('/dashboard');
+      //redirecting to the dashboard 
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

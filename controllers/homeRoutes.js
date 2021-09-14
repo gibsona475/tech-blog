@@ -6,7 +6,7 @@ const { Post, Comment, User } = require('../models');
 router.get("/login", (req,res) =>{
     // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/dashboard');
+    res.redirect('/');
     return;
   }
 
@@ -17,14 +17,15 @@ router.get("/login", (req,res) =>{
 
 router.get("/signup", (req,res) =>{
     if (req.session.logged_in) {
-        res.redirect('/dashboard');
+      //redirects to DASHBOARD
+        res.redirect('/');
         return;
       }
     //render handlebars 
     res.render('signup'); 
 }); 
 
-router.get('/dashboard/new', (req,res)=>{
+router.get('/newpost', (req,res)=>{
   res.render('newpost');
 }); 
 
